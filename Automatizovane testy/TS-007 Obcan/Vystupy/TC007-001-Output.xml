@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T21:42:54.900836" rpa="false" schemaversion="5">
+<suite id="s1" name="TC007-001" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-007 Obcan/TC007-001.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:42:55.002817" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/obec/obcan'.</msg>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T21:42:55.002709" elapsed="1.729480"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T21:42:56.732423" elapsed="0.382174"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:42:55.002423" elapsed="2.112290"/>
+</kw>
+<test id="s1-t1" name="TC007-001: Ověření hlavního obsahu na stránce Občan" line="19">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${LINK_AKTUALITY}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T21:42:57.115289" elapsed="0.280362"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:42:57.413164" level="INFO">Element 'xpath=//*[@id="cnt"]/div/div/div[2]/div[2]/nav/ul[1]/li[1]/a' is displayed.</msg>
+<arg>${LINK_AKTUALITY}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T21:42:57.396065" elapsed="0.017194"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${LINK_URAD_MESTYSE}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T21:42:57.413451" elapsed="0.273453"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:42:57.702146" level="INFO">Element 'xpath=//*[@id="cnt"]/div/div/div[2]/div[2]/nav/ul[2]/li[1]/a' is displayed.</msg>
+<arg>${LINK_URAD_MESTYSE}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T21:42:57.687258" elapsed="0.014991"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${LINK_MISTNI_POPLATKY}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T21:42:57.702469" elapsed="0.273793"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:42:57.989085" level="INFO">Element 'xpath=//*[@id="cnt"]/div/div/div[2]/div[2]/nav/ul[3]/li[1]/a' is displayed.</msg>
+<arg>${LINK_MISTNI_POPLATKY}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T21:42:57.976970" elapsed="0.012237"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${LINK_REALIZOVANE}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T21:42:57.989508" elapsed="0.269259"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:42:58.272184" level="INFO">Element 'xpath=//*[@id="cnt"]/div/div/div[2]/div[2]/nav/ul[4]/li[1]/a' is displayed.</msg>
+<arg>${LINK_REALIZOVANE}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T21:42:58.259061" elapsed="0.013198"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${LINK_ZASTUPITELSTVO}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T21:42:58.272437" elapsed="0.282232"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:42:58.575444" level="INFO">Element 'xpath=//*[@id="cnt"]/div/div/div[2]/div[2]/nav/ul[5]/li[1]/a' is displayed.</msg>
+<arg>${LINK_ZASTUPITELSTVO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T21:42:58.555581" elapsed="0.019989"/>
+</kw>
+<doc>Ověří, že stránka „Občan“ obsahuje důležité sekce a odkazy.</doc>
+<status status="PASS" start="2025-07-19T21:42:57.114811" elapsed="1.461039"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:42:58.662867" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC007-001.png"&gt;&lt;img src="TC007-001.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC007-001.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T21:42:58.576950" elapsed="0.085977"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T21:42:58.663019" elapsed="0.078888"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:42:58.576650" elapsed="0.165330"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:42:54.901977" elapsed="3.840025"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC007-001" id="s1" pass="1" fail="0" skip="0">TC007-001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

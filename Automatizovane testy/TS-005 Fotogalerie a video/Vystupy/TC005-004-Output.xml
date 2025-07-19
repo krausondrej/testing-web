@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T21:06:29.526485" rpa="false" schemaversion="5">
+<suite id="s1" name="TC005-004" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-005 Fotogalerie a video/TC005-004.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:06:29.635471" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/obec/fotogalerie-a-video'.</msg>
+<arg>${GALLERY_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T21:06:29.635355" elapsed="2.228663"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T21:06:31.864430" elapsed="0.374373"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Fotogalerie</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-19T21:06:32.238931" elapsed="0.025431"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:06:29.635050" elapsed="2.629423"/>
+</kw>
+<test id="s1-t1" name="TC005-004: Ověření odkazu „Videa z příspěvků“ – přesměrování" line="15">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${VIDEOS_BUTTON}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T21:06:32.265361" elapsed="0.012591"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${VIDEOS_BUTTON}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T21:06:32.278117" elapsed="0.268119"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:06:32.547274" level="INFO">Clicking element 'xpath=//a[contains(@class, "btn-rounded") and contains(., "Videa z příspěvků")]'.</msg>
+<arg>${VIDEOS_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:06:32.546795" elapsed="0.466916"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>${EXPECTED_URL_PART}</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-19T21:06:33.013940" elapsed="0.003311"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:06:33.019683" level="INFO">Current location contains '/obec/videa'.</msg>
+<arg>${EXPECTED_URL_PART}</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-19T21:06:33.017395" elapsed="0.002348"/>
+</kw>
+<doc>Ověří, že tlačítko „Videa z příspěvků“ přesměruje na správnou stránku s videi.</doc>
+<status status="PASS" start="2025-07-19T21:06:32.264617" elapsed="0.755273"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:06:33.207369" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC005-004.png"&gt;&lt;img src="TC005-004.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC005-004.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T21:06:33.020623" elapsed="0.186819"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T21:06:33.207544" elapsed="0.090412"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:06:33.020433" elapsed="0.277611"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:06:29.527024" elapsed="3.771046"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC005-004" id="s1" pass="1" fail="0" skip="0">TC005-004</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

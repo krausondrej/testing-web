@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T21:03:04.492043" rpa="false" schemaversion="5">
+<suite id="s1" name="TC005-003" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-005 Fotogalerie a video/TC005-003.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:03:04.587915" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/obec/fotogalerie'.</msg>
+<arg>${GALLERY_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T21:03:04.587801" elapsed="5.219539"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T21:03:09.807725" elapsed="0.377149"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Fotogalerie</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-19T21:03:10.184986" elapsed="0.018436"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:03:04.587494" elapsed="5.616022"/>
+</kw>
+<test id="s1-t1" name="TC005-003: Ověření přesměrování po kliknutí na „Změnit rok“" line="15">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${YEAR_CHANGE_BUTTON}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T21:03:10.204336" elapsed="0.013029"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${YEAR_CHANGE_BUTTON}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T21:03:10.217513" elapsed="0.269526"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:03:10.487741" level="INFO">Clicking element 'xpath=//*[@id="photos-parent"]/div[1]/div/div[2]/a[2]'.</msg>
+<arg>${YEAR_CHANGE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:03:10.487397" elapsed="4.468138"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>${EXPECTED_URL_PART}</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-19T21:03:14.955871" elapsed="0.004138"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:03:14.963236" level="INFO">Current location contains 'year=2024'.</msg>
+<arg>${EXPECTED_URL_PART}</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-19T21:03:14.960226" elapsed="0.003127"/>
+</kw>
+<doc>Ověří, že po kliknutí na tlačítko „Změnit rok“ dojde k přesměrování na URL obsahující parametry roku (např. year=2024).</doc>
+<status status="PASS" start="2025-07-19T21:03:10.203596" elapsed="4.759924"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:03:15.168866" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC005-003.png"&gt;&lt;img src="TC005-003.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC005-003.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T21:03:14.964242" elapsed="0.204686"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T21:03:15.169031" elapsed="0.095360"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:03:14.964047" elapsed="0.300415"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:03:04.492528" elapsed="10.771955"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC005-003" id="s1" pass="1" fail="0" skip="0">TC005-003</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

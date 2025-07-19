@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T20:59:53.405996" rpa="false" schemaversion="5">
+<suite id="s1" name="TC005-002" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-005 Fotogalerie a video/TC005-002.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T20:59:53.513835" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/obec/fotogalerie'.</msg>
+<arg>${GALLERY_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T20:59:53.513733" elapsed="5.049789"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T20:59:58.564053" elapsed="0.378469"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Fotogalerie</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-19T20:59:58.942628" elapsed="0.014812"/>
+</kw>
+<status status="PASS" start="2025-07-19T20:59:53.513454" elapsed="5.444058"/>
+</kw>
+<test id="s1-t1" name="TC005-002: Ověření přepnutí galerie podle kategorie (např. „Hasiči“)" line="16">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ALL_FILTER_LINK}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T20:59:58.958064" elapsed="0.012163"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${ALL_FILTER_LINK}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T20:59:58.970367" elapsed="0.275528"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T20:59:59.246552" level="INFO">Clicking element 'xpath=//*[@id="photos-parent"]/div[1]/div/div[1]/div/a'.</msg>
+<arg>${ALL_FILTER_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T20:59:59.246235" elapsed="0.048744"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CATEGORY_FIREMEN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T20:59:59.295125" elapsed="0.009447"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${CATEGORY_FIREMEN}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T20:59:59.304693" elapsed="0.274980"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T20:59:59.580287" level="INFO">Clicking element 'xpath=//div[@class="title-selector-inner"]//a[contains(text(), "Hasiči")]'.</msg>
+<arg>${CATEGORY_FIREMEN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T20:59:59.579985" elapsed="0.261828"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>orgId=58</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-19T20:59:59.841947" elapsed="0.002803"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${GALLERY_SECTION}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T20:59:59.844874" elapsed="0.007953"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T20:59:59.855902" level="INFO">Current page contains element 'id=photos'.</msg>
+<arg>${GALLERY_SECTION}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-19T20:59:59.852928" elapsed="0.003016"/>
+</kw>
+<doc>Ověří, že po kliknutí na „Hasiči“ v seznamu kategorií se galerie správně načte.</doc>
+<status status="PASS" start="2025-07-19T20:59:58.957585" elapsed="0.898561"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:00:00.039993" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC005-002.png"&gt;&lt;img src="TC005-002.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC005-002.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T20:59:59.856773" elapsed="0.183289"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T21:00:00.040151" elapsed="0.094291"/>
+</kw>
+<status status="PASS" start="2025-07-19T20:59:59.856664" elapsed="0.277865"/>
+</kw>
+<status status="PASS" start="2025-07-19T20:59:53.407949" elapsed="6.726603"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC005-002" id="s1" pass="1" fail="0" skip="0">TC005-002</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

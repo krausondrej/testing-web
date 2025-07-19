@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T19:15:39.369047" rpa="false" schemaversion="5">
+<suite id="s1" name="TC003-002" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-003 Rezervacni system/TC003-002.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T19:15:39.460742" level="INFO">Opening browser 'Chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T19:15:39.460638" elapsed="1.235161"/>
+</kw>
+<status status="PASS" start="2025-07-19T19:15:39.460337" elapsed="1.235859"/>
+</kw>
+<test id="s1-t1" name="TC003-002: Přímá rezervace – Víceúčelové hřiště" line="15">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-07-19T19:15:40.698216" level="INFO">Opening url 'https://pozlovice.rezervace.online'</msg>
+<arg>${BASE URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-07-19T19:15:40.697828" elapsed="0.818650"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T19:15:41.516630" elapsed="0.369318"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${HŘIŠTĚ_TITUL}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-19T19:15:41.886118" elapsed="0.015713"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${HŘIŠTĚ_TITUL}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T19:15:41.901956" elapsed="0.275066"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T19:15:42.178554" level="INFO">Clicking element 'xpath=//span[contains(text(), "Víceúčelové hřiště u MŠ")]'.</msg>
+<arg>${HŘIŠTĚ_TITUL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T19:15:42.177875" elapsed="0.103478"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${REZERVAČNÍ_BOX}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-19T19:15:42.281900" elapsed="0.014304"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T19:15:42.300074" level="INFO">Current page contains element 'xpath=//div[contains(@class, "place-detail") or contains(@class, "calendar") or contains(text(), "Rezervace")]'.</msg>
+<arg>${REZERVAČNÍ_BOX}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-19T19:15:42.296354" elapsed="0.003762"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-19T19:15:42.300345" level="INFO">Načtena stránka detailu Víceúčelového hřiště s možností rezervace.</msg>
+<arg>Načtena stránka detailu Víceúčelového hřiště s možností rezervace.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-19T19:15:42.300236" elapsed="0.000129"/>
+</kw>
+<doc>Klikne na „Víceúčelové hřiště u MŠ“ a ověří, že se zobrazí rezervační stránka.</doc>
+<status status="PASS" start="2025-07-19T19:15:40.696523" elapsed="1.603919"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T19:15:42.390531" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC003-002.png"&gt;&lt;img src="TC003-002.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC003-002.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T19:15:42.300954" elapsed="0.089647"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T19:15:42.390700" elapsed="0.073662"/>
+</kw>
+<status status="PASS" start="2025-07-19T19:15:42.300840" elapsed="0.163591"/>
+</kw>
+<status status="PASS" start="2025-07-19T19:15:39.369540" elapsed="3.094913"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC003-002" id="s1" pass="1" fail="0" skip="0">TC003-002</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

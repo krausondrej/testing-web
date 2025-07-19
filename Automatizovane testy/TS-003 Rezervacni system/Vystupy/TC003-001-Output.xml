@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T19:05:46.500348" rpa="false" schemaversion="5">
+<suite id="s1" name="TC003-001" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-003 Rezervacni system/TC003-001.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T19:05:46.602877" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/obec/rezervacni-system'.</msg>
+<arg>${URL_REZERVACE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T19:05:46.602758" elapsed="2.786739"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T19:05:49.390004" elapsed="0.584782"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${REENIO_IFRAME}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T19:05:49.974918" elapsed="0.027021"/>
+</kw>
+<status status="PASS" start="2025-07-19T19:05:46.602470" elapsed="3.399708"/>
+</kw>
+<test id="s1-t1" name="TC003-001: Ověření existence iframe rezervačního systému" line="14">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${REENIO_IFRAME}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T19:05:50.003395" elapsed="0.277379"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${REENIO_IFRAME}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T19:05:50.280960" elapsed="0.007344"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-07-19T19:05:50.294992" level="INFO">${iframe_name} = reenioIframe2183420652733110300</msg>
+<var>${iframe_name}</var>
+<arg>${REENIO_IFRAME}</arg>
+<arg>name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-07-19T19:05:50.288452" elapsed="0.006570"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-19T19:05:50.295285" level="INFO">Iframe name: reenioIframe2183420652733110300</msg>
+<arg>Iframe name: ${iframe_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-19T19:05:50.295154" elapsed="0.000153"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-07-19T19:05:50.295432" level="INFO">Length is 31.</msg>
+<arg>${iframe_name}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-07-19T19:05:50.295372" elapsed="0.000078"/>
+</kw>
+<doc>Ověří, že iframe rezervačního systému je na stránce přítomen, viditelný a má vyplněný atribut `name`.</doc>
+<status status="PASS" start="2025-07-19T19:05:50.002768" elapsed="0.292751"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T19:05:50.541687" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC003-001.png"&gt;&lt;img src="TC003-001.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC003-001.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T19:05:50.296200" elapsed="0.245550"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T19:05:50.541842" elapsed="0.082118"/>
+</kw>
+<status status="PASS" start="2025-07-19T19:05:50.295963" elapsed="0.328073"/>
+</kw>
+<status status="PASS" start="2025-07-19T19:05:46.501672" elapsed="4.122389"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC003-001" id="s1" pass="1" fail="0" skip="0">TC003-001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

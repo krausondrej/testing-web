@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T21:45:59.884778" rpa="false" schemaversion="5">
+<suite id="s1" name="TC008-001" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-008 Elektronicka podatelna/TC008-001.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:45:59.985215" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/obec/formulare/podatelna'.</msg>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T21:45:59.985103" elapsed="1.890835"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T21:46:01.877495" elapsed="2.029027"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:45:59.984784" elapsed="3.921845"/>
+</kw>
+<test id="s1-t1" name="TC008-001: Ověření existence a funkčnosti formuláře elektronické podatelny" line="20">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:46:03.907193" level="INFO">Opening url 'https://pozlovice.cz/obec/formulare/podatelna'</msg>
+<arg>${START_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-07-19T21:46:03.907087" elapsed="0.241995"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${FIELD_NAME}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-19T21:46:04.149253" elapsed="0.010852"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${FIELD_NAME}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T21:46:04.160232" elapsed="0.382524"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:46:04.560287" level="INFO">Element 'id=frm-podatelnaForm-name' is displayed.</msg>
+<arg>${FIELD_NAME}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T21:46:04.543206" elapsed="0.017163"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:46:04.572002" level="INFO">Element 'id=frm-podatelnaForm-tel' is displayed.</msg>
+<arg>${FIELD_PHONE}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T21:46:04.560553" elapsed="0.011507"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:46:04.582256" level="INFO">Element 'id=frm-podatelnaForm-email' is displayed.</msg>
+<arg>${FIELD_EMAIL}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T21:46:04.572187" elapsed="0.010121"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:46:04.591069" level="INFO">Element 'id=frm-podatelnaForm-subject' is displayed.</msg>
+<arg>${FIELD_SUBJECT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T21:46:04.582417" elapsed="0.008691"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:46:04.599176" level="INFO">Element 'id=frm-podatelnaForm-body' is displayed.</msg>
+<arg>${FIELD_BODY}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T21:46:04.591196" elapsed="0.008014"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:46:04.608472" level="INFO">Element 'xpath=//input[@type='submit' and @value='Odeslat']' is displayed.</msg>
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T21:46:04.599292" elapsed="0.009221"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:46:04.608722" level="INFO">Typing text 'Testovací Uživatel' into text field 'id=frm-podatelnaForm-name'.</msg>
+<arg>${FIELD_NAME}</arg>
+<arg>Testovací Uživatel</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:46:04.608615" elapsed="0.118994"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:46:04.727891" level="INFO">Typing text '123456789' into text field 'id=frm-podatelnaForm-tel'.</msg>
+<arg>${FIELD_PHONE}</arg>
+<arg>123456789</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:46:04.727753" elapsed="0.029710"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:46:04.757728" level="INFO">Typing text 'test@example.com' into text field 'id=frm-podatelnaForm-email'.</msg>
+<arg>${FIELD_EMAIL}</arg>
+<arg>test@example.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:46:04.757603" elapsed="0.043373"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:46:04.801269" level="INFO">Typing text 'Dotaz ohledně podatelny' into text field 'id=frm-podatelnaForm-subject'.</msg>
+<arg>${FIELD_SUBJECT}</arg>
+<arg>Dotaz ohledně podatelny</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:46:04.801122" elapsed="0.037156"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:46:04.838541" level="INFO">Typing text 'Toto je testovací zpráva přes podatelnu.' into text field 'id=frm-podatelnaForm-body'.</msg>
+<arg>${FIELD_BODY}</arg>
+<arg>Toto je testovací zpráva přes podatelnu.</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:46:04.838412" elapsed="0.043989"/>
+</kw>
+<doc>Ověří, že formulář na stránce Elektronická podatelna obsahuje povinná pole a lze do nich zapisovat.</doc>
+<status status="PASS" start="2025-07-19T21:46:03.906726" elapsed="0.975818"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:46:05.016974" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC008-001.png"&gt;&lt;img src="TC008-001.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC008-001.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T21:46:04.883002" elapsed="0.134121"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T21:46:05.017281" elapsed="0.085362"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:46:04.882885" elapsed="0.219833"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:45:59.885303" elapsed="5.217444"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC008-001" id="s1" pass="1" fail="0" skip="0">TC008-001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

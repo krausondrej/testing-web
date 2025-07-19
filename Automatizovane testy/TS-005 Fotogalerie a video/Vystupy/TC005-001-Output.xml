@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T20:56:30.964579" rpa="false" schemaversion="5">
+<suite id="s1" name="TC005-001" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-005 Fotogalerie a video/TC005-001.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T20:56:31.068039" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/obec/fotogalerie-a-video'.</msg>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T20:56:31.067929" elapsed="2.319781"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T20:56:33.388001" elapsed="0.371540"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Fotogalerie</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-19T20:56:33.759666" elapsed="0.017316"/>
+</kw>
+<status status="PASS" start="2025-07-19T20:56:31.067647" elapsed="2.709416"/>
+</kw>
+<test id="s1-t1" name="TC005-001: Ověření načtení galerie – blok s fotkami" line="16">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${GALLERY_BUTTON}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T20:56:33.777616" elapsed="0.011977"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${GALLERY_BUTTON}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T20:56:33.789750" elapsed="0.275129"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T20:56:34.065540" level="INFO">Clicking element 'xpath=//a[contains(@class, "btn-rounded") and contains(., "Fotogalerie")]'.</msg>
+<arg>${GALLERY_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T20:56:34.065228" elapsed="2.986148"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${PHOTOS_BLOCK}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-19T20:56:37.051699" elapsed="0.008564"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${PHOTOS_BLOCK}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T20:56:37.060415" elapsed="0.271174"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T20:56:37.340501" level="INFO">Current page contains element 'css=#photos a'.</msg>
+<arg>${PHOTO_LINKS}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-19T20:56:37.331729" elapsed="0.008835"/>
+</kw>
+<doc>Ověří, že po kliknutí na "Fotogalerie" se načte blok s fotkami a obsahuje alespoň 1 fotku.</doc>
+<status status="PASS" start="2025-07-19T20:56:33.777146" elapsed="3.563529"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T20:56:37.471285" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC005-001.png"&gt;&lt;img src="TC005-001.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC005-001.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T20:56:37.341146" elapsed="0.130201"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T20:56:37.471429" elapsed="0.093489"/>
+</kw>
+<status status="PASS" start="2025-07-19T20:56:37.341021" elapsed="0.223968"/>
+</kw>
+<status status="PASS" start="2025-07-19T20:56:30.965630" elapsed="6.599381"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC005-001" id="s1" pass="1" fail="0" skip="0">TC005-001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

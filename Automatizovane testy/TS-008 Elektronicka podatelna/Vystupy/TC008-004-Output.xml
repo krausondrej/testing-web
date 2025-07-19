@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T21:54:23.264125" rpa="false" schemaversion="5">
+<suite id="s1" name="TC008-004" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-008 Elektronicka podatelna/TC008-004.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:54:23.366212" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/obec/formulare/podatelna'.</msg>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T21:54:23.366097" elapsed="3.418309"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T21:54:26.785297" elapsed="0.665801"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:54:23.365779" elapsed="4.085473"/>
+</kw>
+<test id="s1-t1" name="TC008-004: Ověření funkčnosti checkboxu „Poslat kopii e-mailu“" line="21">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:54:27.452830" level="INFO">Opening url 'https://pozlovice.cz/obec/formulare/podatelna'</msg>
+<arg>${START_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-07-19T21:54:27.452700" elapsed="0.233995"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIELD_NAME}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T21:54:27.687058" elapsed="0.018550"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${FIELD_NAME}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T21:54:27.705765" elapsed="0.277348"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:54:27.983772" level="INFO">Typing text 'Test Tester' into text field 'id=frm-podatelnaForm-name'.</msg>
+<arg>${FIELD_NAME}</arg>
+<arg>Test Tester</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:54:27.983444" elapsed="0.132358"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:54:28.116081" level="INFO">Typing text '777888999' into text field 'id=frm-podatelnaForm-tel'.</msg>
+<arg>${FIELD_PHONE}</arg>
+<arg>777888999</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:54:28.115943" elapsed="0.031961"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:54:28.148178" level="INFO">Typing text 'test@example.cz' into text field 'id=frm-podatelnaForm-email'.</msg>
+<arg>${FIELD_EMAIL}</arg>
+<arg>test@example.cz</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:54:28.148046" elapsed="0.042902"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:54:28.191221" level="INFO">Typing text 'Testování checkboxu' into text field 'id=frm-podatelnaForm-subject'.</msg>
+<arg>${FIELD_SUBJECT}</arg>
+<arg>Testování checkboxu</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:54:28.191087" elapsed="0.036587"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:54:28.227940" level="INFO">Typing text 'Test obsahu pro kontrolu checkboxu' into text field 'id=frm-podatelnaForm-body'.</msg>
+<arg>${FIELD_BODY}</arg>
+<arg>Test obsahu pro kontrolu checkboxu</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:54:28.227809" elapsed="0.040907"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:54:28.269025" level="INFO">Clicking element 'id=frm-podatelnaForm-isCopy'.</msg>
+<arg>${CHECKBOX_COPY}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:54:28.268876" elapsed="0.029988"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:54:28.299867" level="INFO">Executing JavaScript:
+return document.getElementById("frm-podatelnaForm-isCopy").checked;
+Without any arguments.</msg>
+<msg time="2025-07-19T21:54:28.303172" level="INFO">${checked} = True</msg>
+<var>${checked}</var>
+<arg>return document.getElementById("frm-podatelnaForm-isCopy").checked;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-07-19T21:54:28.299149" elapsed="0.004044"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${checked}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-07-19T21:54:28.303301" elapsed="0.000162"/>
+</kw>
+<doc>Ověří, že checkbox „Poslat kopii e-mailu“ lze zaškrtnout a jeho stav je správně detekován.</doc>
+<status status="PASS" start="2025-07-19T21:54:27.452073" elapsed="0.851481"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:54:28.461285" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC008-004.png"&gt;&lt;img src="TC008-004.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC008-004.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T21:54:28.303987" elapsed="0.157356"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T21:54:28.461426" elapsed="0.132758"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:54:28.303879" elapsed="0.290374"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:54:23.265331" elapsed="5.328945"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC008-004" id="s1" pass="1" fail="0" skip="0">TC008-004</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

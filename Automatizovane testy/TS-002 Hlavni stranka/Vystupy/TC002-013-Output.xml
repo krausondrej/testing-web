@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T21:16:01.989296" rpa="false" schemaversion="5">
+<suite id="s1" name="TC002-013" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-002 Hlavni stranka/TC002-013.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:16:02.094449" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/'.</msg>
+<arg>${MAIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T21:16:02.094341" elapsed="9.722754"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T21:16:11.817666" elapsed="0.381743"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:16:02.094064" elapsed="10.105548"/>
+</kw>
+<test id="s1-t1" name="TC002-013: Ověření zobrazení sekce Instagram na hlavní stránce" line="15">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INSTAGRAM_SECTION}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T21:16:12.200702" elapsed="0.018629"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${INSTAGRAM_SECTION}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T21:16:12.219493" elapsed="0.270886"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INSTAGRAM_IFRAME}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T21:16:12.490675" elapsed="0.018799"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:16:12.514089" level="INFO">Current page contains element 'xpath=//section[@id="module-instagram"]//iframe'.</msg>
+<arg>${INSTAGRAM_IFRAME}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-19T21:16:12.509657" elapsed="0.004487"/>
+</kw>
+<doc>Ověří, že se na hlavní stránce nachází sekce s Instagramem a obsahuje vložené příspěvky (iframe).</doc>
+<status status="PASS" start="2025-07-19T21:16:12.200006" elapsed="0.314286"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:16:12.688710" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC002-013.png"&gt;&lt;img src="TC002-013.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC002-013.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T21:16:12.515382" elapsed="0.173393"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T21:16:12.688870" elapsed="0.096558"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:16:12.515165" elapsed="0.270352"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:16:01.990061" elapsed="10.795491"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC002-013" id="s1" pass="1" fail="0" skip="0">TC002-013</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

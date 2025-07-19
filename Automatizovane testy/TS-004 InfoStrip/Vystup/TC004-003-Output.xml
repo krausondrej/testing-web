@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T20:44:02.456305" rpa="false" schemaversion="5">
+<suite id="s1" name="TC004-003" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-004 InfoStrip/TC004-003.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T20:44:02.559767" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/'.</msg>
+<arg>${URL_TEST_PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T20:44:02.559658" elapsed="7.221262"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T20:44:09.781307" elapsed="0.377490"/>
+</kw>
+<status status="PASS" start="2025-07-19T20:44:02.559353" elapsed="7.599535"/>
+</kw>
+<test id="s1-t1" name="TC004-003: Ověření odkazů na sociální sítě – Facebook a Instagram" line="15">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${FACEBOOK_LINK}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-19T20:44:10.159437" elapsed="0.016481"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${INSTAGRAM_LINK}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-19T20:44:10.176082" elapsed="0.007757"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-07-19T20:44:10.191523" level="INFO">${fb_href} = https://www.facebook.com/MestysPozlovice</msg>
+<var>${fb_href}</var>
+<arg>${FACEBOOK_LINK}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-07-19T20:44:10.183963" elapsed="0.007595"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-07-19T20:44:10.198748" level="INFO">${ig_href} = https://www.instagram.com/pozlovice</msg>
+<var>${ig_href}</var>
+<arg>${INSTAGRAM_LINK}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-07-19T20:44:10.191644" elapsed="0.007126"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${fb_href}</arg>
+<arg>facebook.com</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-19T20:44:10.198873" elapsed="0.000098"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${ig_href}</arg>
+<arg>instagram.com</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-19T20:44:10.199028" elapsed="0.000053"/>
+</kw>
+<doc>Ověří, že existují správné odkazy na Facebook a Instagram.</doc>
+<status status="PASS" start="2025-07-19T20:44:10.158990" elapsed="0.040158"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T20:44:10.426603" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC004-003.png"&gt;&lt;img src="TC004-003.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC004-003.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T20:44:10.199536" elapsed="0.227138"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T20:44:10.426758" elapsed="0.099914"/>
+</kw>
+<status status="PASS" start="2025-07-19T20:44:10.199442" elapsed="0.327317"/>
+</kw>
+<status status="PASS" start="2025-07-19T20:44:02.456915" elapsed="8.069870"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC004-003" id="s1" pass="1" fail="0" skip="0">TC004-003</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T21:09:46.364275" rpa="false" schemaversion="5">
+<suite id="s1" name="TC005-005" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-005 Fotogalerie a video/TC005-005.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:09:46.422255" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/obec/videa'.</msg>
+<arg>${VIDEOS_PAGE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T21:09:46.422143" elapsed="1.007095"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T21:09:47.431137" elapsed="1.617353"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Videa z příspěvků</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-19T21:09:49.048613" elapsed="0.010277"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:09:46.421855" elapsed="2.637121"/>
+</kw>
+<test id="s1-t1" name="TC005-005: Ověření spuštění videa – aktivace přehrávače" line="15">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${VIDEO_THUMB}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T21:09:49.059579" elapsed="0.010176"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${VIDEO_THUMB}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T21:09:49.069875" elapsed="0.268350"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:09:49.338895" level="INFO">Clicking element 'xpath=//div[contains(@class, "video-thumb")]'.</msg>
+<arg>${VIDEO_THUMB}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:09:49.338592" elapsed="0.057062"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${VIDEO_ELEMENT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-19T21:09:49.395827" elapsed="0.010475"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:09:49.409899" level="INFO">Current page contains element 'xpath=//video[contains(@class, "lg-video-object") and @src]'.</msg>
+<arg>${VIDEO_ELEMENT}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-19T21:09:49.406470" elapsed="0.003465"/>
+</kw>
+<doc>Ověří, že po kliknutí na náhled videa se zobrazí HTML5 video přehrávač s atributem `src`.</doc>
+<status status="PASS" start="2025-07-19T21:09:49.059063" elapsed="0.350974"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:09:49.597167" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC005-005.png"&gt;&lt;img src="TC005-005.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC005-005.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T21:09:49.410496" elapsed="0.186748"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T21:09:49.597344" elapsed="0.081570"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:09:49.410365" elapsed="0.268622"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:09:46.366275" elapsed="3.312734"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC005-005" id="s1" pass="1" fail="0" skip="0">TC005-005</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

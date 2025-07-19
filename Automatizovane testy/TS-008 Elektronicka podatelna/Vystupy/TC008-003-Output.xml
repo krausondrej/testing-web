@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T21:52:58.866871" rpa="false" schemaversion="5">
+<suite id="s1" name="TC008-003" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-008 Elektronicka podatelna/TC008-003.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:52:58.962447" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/obec/formulare/podatelna'.</msg>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T21:52:58.962340" elapsed="3.524932"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T21:53:02.488219" elapsed="0.648685"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:52:58.962069" elapsed="4.175036"/>
+</kw>
+<test id="s1-t1" name="TC008-003: Ověření validace pole Jméno a příjmení (chybí)" line="20">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:53:03.138289" level="INFO">Opening url 'https://pozlovice.cz/obec/formulare/podatelna'</msg>
+<arg>${START_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-07-19T21:53:03.138082" elapsed="0.270997"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIELD_PHONE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T21:53:03.409355" elapsed="0.014030"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${FIELD_PHONE}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T21:53:03.423551" elapsed="0.285907"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:53:03.710021" level="INFO">Typing text '123456789' into text field 'id=frm-podatelnaForm-tel'.</msg>
+<arg>${FIELD_PHONE}</arg>
+<arg>123456789</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:53:03.709745" elapsed="0.124509"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:53:03.834548" level="INFO">Typing text 'uzivatel@test.cz' into text field 'id=frm-podatelnaForm-email'.</msg>
+<arg>${FIELD_EMAIL}</arg>
+<arg>uzivatel@test.cz</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:53:03.834411" elapsed="0.032520"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:53:03.867184" level="INFO">Typing text 'Test bez jména' into text field 'id=frm-podatelnaForm-subject'.</msg>
+<arg>${FIELD_SUBJECT}</arg>
+<arg>Test bez jména</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:53:03.867057" elapsed="0.038322"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:53:03.905652" level="INFO">Typing text 'Obsah bez jména' into text field 'id=frm-podatelnaForm-body'.</msg>
+<arg>${FIELD_BODY}</arg>
+<arg>Obsah bez jména</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:53:03.905519" elapsed="0.033541"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:53:03.939633" level="INFO">Executing JavaScript:
+return document.getElementById("frm-podatelnaForm-name").checkValidity();
+Without any arguments.</msg>
+<msg time="2025-07-19T21:53:03.941785" level="INFO">${is_valid} = False</msg>
+<var>${is_valid}</var>
+<arg>return document.getElementById("frm-podatelnaForm-name").checkValidity();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-07-19T21:53:03.939225" elapsed="0.002580"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_valid}</arg>
+<arg>Fail</arg>
+<arg>Očekává se, že pole jmeno nebude validní, ale je.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-19T21:53:03.941926" elapsed="0.000083"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:53:03.942227" level="INFO">Executing JavaScript:
+return document.getElementById("frm-podatelnaForm-name").validationMessage;
+Without any arguments.</msg>
+<msg time="2025-07-19T21:53:03.945041" level="INFO">${validation_message} = Vyplňte prosím toto pole.</msg>
+<var>${validation_message}</var>
+<arg>return document.getElementById("frm-podatelnaForm-name").validationMessage;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-07-19T21:53:03.942090" elapsed="0.002972"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${validation_message}</arg>
+<arg>Vyplňte prosím</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-19T21:53:03.945150" elapsed="0.000091"/>
+</kw>
+<doc>Ověří, že formulář nepovolí odeslání bez vyplnění jména a příjmení (HTML5 validace).</doc>
+<status status="PASS" start="2025-07-19T21:53:03.137321" elapsed="0.808016"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:53:04.093683" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC008-003.png"&gt;&lt;img src="TC008-003.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC008-003.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T21:53:03.945743" elapsed="0.147997"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T21:53:04.093824" elapsed="0.091498"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:53:03.945637" elapsed="0.239769"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:52:58.867701" elapsed="5.317730"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC008-003" id="s1" pass="1" fail="0" skip="0">TC008-003</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

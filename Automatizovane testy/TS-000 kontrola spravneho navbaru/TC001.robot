@@ -10,7 +10,7 @@ ${URL_TEST_PAGE}  https://pozlovice.cz/
 
 *** Test Cases ***
 
-Kontrola načtení hlavičky a nadpisu
+TC001: Kontrola načtení hlavičky a nadpisu
     [Documentation]    Ověří, že hlavička stránky obsahuje správný nadpis "Pozlovice"
     Wait Until Page Contains Element    css:header.header h1.sr-only    timeout=10s
     Element Text Should Be              css:header.header h1.sr-only    Pozlovice

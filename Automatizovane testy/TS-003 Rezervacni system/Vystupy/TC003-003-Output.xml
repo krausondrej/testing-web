@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T19:48:38.650389" rpa="false" schemaversion="5">
+<suite id="s1" name="TC003-003" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-003 Rezervacni system/TC003-003.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T19:48:38.743459" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.rezervace.online/cs/place/viceucelove-hriste-u-ms-26542/2025-07-16;viewMode=7-days'.</msg>
+<arg>${RESERVATION_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T19:48:38.743347" elapsed="1.615022"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T19:48:40.358743" elapsed="0.378980"/>
+</kw>
+<status status="PASS" start="2025-07-19T19:48:38.743042" elapsed="1.994819"/>
+</kw>
+<test id="s1-t1" name="TC003-003: Výběr volného termínu – zobrazení rezervačního formuláře" line="15">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, "terms-view-container")]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-19T19:48:40.738407" elapsed="0.006273"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${AVAILABLE_SLOT}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-19T19:48:40.744806" elapsed="0.007568"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${AVAILABLE_SLOT}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T19:48:40.752484" elapsed="0.279829"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T19:48:41.033305" level="INFO">Clicking element 'xpath=//td[contains(@class, "cell") and contains(@class, "is-available")]'.</msg>
+<arg>${AVAILABLE_SLOT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T19:48:41.032853" elapsed="0.071039"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${RESERVATION_FORM}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-19T19:48:41.104054" elapsed="0.261639"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T19:48:41.373360" level="INFO">Current page contains element 'xpath=//form | //input[@type="text"] | //button[contains(text(), "Rezervovat")]'.</msg>
+<arg>${RESERVATION_FORM}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-19T19:48:41.366255" elapsed="0.007171"/>
+</kw>
+<doc>Ověří, že po kliknutí na volný termín (zelené pole) se zobrazí formulář.</doc>
+<status status="PASS" start="2025-07-19T19:48:40.737954" elapsed="0.635621"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T19:48:41.457658" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC003-003.png"&gt;&lt;img src="TC003-003.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC003-003.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T19:48:41.374130" elapsed="0.083647"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T19:48:41.457921" elapsed="0.077691"/>
+</kw>
+<status status="PASS" start="2025-07-19T19:48:41.373994" elapsed="0.161696"/>
+</kw>
+<status status="PASS" start="2025-07-19T19:48:38.651117" elapsed="2.884601"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC003-003" id="s1" pass="1" fail="0" skip="0">TC003-003</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

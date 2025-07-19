@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T21:13:01.434131" rpa="false" schemaversion="5">
+<suite id="s1" name="TC006-001" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-006 Footer/TC006-001.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:13:01.540614" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/'.</msg>
+<arg>${HOMEPAGE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T21:13:01.540500" elapsed="6.430190"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T21:13:07.971463" elapsed="0.563560"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:13:01.540169" elapsed="6.995285"/>
+</kw>
+<test id="s1-t1" name="TC006-001: Ověření přítomnosti log a odkazů v patičce" line="16">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${FOOTER_SECTION}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-19T21:13:08.537988" elapsed="0.077232"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${FOOTER_SECTION}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T21:13:08.615491" elapsed="0.275150"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:13:08.905463" level="INFO">Current page contains element 'xpath=//footer//img'.</msg>
+<arg>${LOGO_IMG}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-19T21:13:08.890943" elapsed="0.014610"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:13:08.913863" level="INFO">Current page contains element 'xpath=//footer//a'.</msg>
+<arg>${FOOTER_LINKS}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-19T21:13:08.905735" elapsed="0.008194"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:13:08.926164" level="INFO">${href1} = https://pozlovice.cz/obec/projekty/4</msg>
+<var>${href1}</var>
+<arg>xpath=(//footer//a)[1]</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:13:08.914100" elapsed="0.012090"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${href1}</arg>
+<arg>projekty</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-19T21:13:08.926326" elapsed="0.000165"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:13:08.934555" level="INFO">${href2} = https://www.visitczechrepublic.com/</msg>
+<var>${href2}</var>
+<arg>xpath=(//footer//a)[2]</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:13:08.926574" elapsed="0.008004"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${href2}</arg>
+<arg>visitczechrepublic</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-19T21:13:08.934678" elapsed="0.000096"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:13:08.942428" level="INFO">${href3} = https://www.vychodni-morava.cz/</msg>
+<var>${href3}</var>
+<arg>xpath=(//footer//a)[3]</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-07-19T21:13:08.934854" elapsed="0.007593"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${href3}</arg>
+<arg>vychodni-morava</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-19T21:13:08.942542" elapsed="0.000143"/>
+</kw>
+<doc>Ověří, že se v patičce nachází loga (img) a odkazy (a), které vedou na externí stránky partnerů.</doc>
+<status status="PASS" start="2025-07-19T21:13:08.536044" elapsed="0.406920"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T21:13:09.150774" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC006-001.png"&gt;&lt;img src="TC006-001.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC006-001.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T21:13:08.943505" elapsed="0.207355"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T21:13:09.150954" elapsed="0.095919"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:13:08.943352" elapsed="0.303588"/>
+</kw>
+<status status="PASS" start="2025-07-19T21:13:01.434985" elapsed="7.811978"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC006-001" id="s1" pass="1" fail="0" skip="0">TC006-001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
