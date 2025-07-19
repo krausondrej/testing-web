@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T18:59:07.863642" rpa="false" schemaversion="5">
+<suite id="s1" name="TC002-012" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-002 Hlavni stranka/TC002-012.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:59:07.965355" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/'.</msg>
+<arg>${URL_TEST_PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T18:59:07.965248" elapsed="6.335882"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T18:59:14.301768" elapsed="0.385261"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAP_WRAPPER}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T18:59:14.687167" elapsed="0.023780"/>
+</kw>
+<status status="PASS" start="2025-07-19T18:59:07.964973" elapsed="6.746067"/>
+</kw>
+<test id="s1-t1" name="TC002-012: Ověření načtení mapy a funkce zoom" line="18">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${MAP_WRAPPER}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T18:59:14.711869" elapsed="0.277715"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAP_WRAPPER}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T18:59:14.990036" elapsed="0.014229"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:59:15.017835" level="INFO">${tiles} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="a017b6e69aec336fbb3ed4e9e157d5e6", element="f.6C49DBDDCC3B86CD85DE03B6597490A3.d.CF393C107F649F861949AE26B745C00F.e.110")&gt;, &lt;selenium.webdri...</msg>
+<var>${tiles}</var>
+<arg>${MAP_TILE}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-07-19T18:59:15.004587" elapsed="0.013299"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-07-19T18:59:15.018296" level="INFO">Length is 24.</msg>
+<msg time="2025-07-19T18:59:15.018347" level="INFO">${count} = 24</msg>
+<var>${count}</var>
+<arg>${tiles}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-07-19T18:59:15.018096" elapsed="0.000265"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-19T18:59:15.018565" level="INFO">Počet načtených dlaždic: 24</msg>
+<arg>Počet načtených dlaždic: ${count}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-19T18:59:15.018459" elapsed="0.000137"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<arg>msg=Mapa nebyla načtena – žádné dlaždice!</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-07-19T18:59:15.018675" elapsed="0.000328"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:59:15.023646" level="INFO">${src} = https://api.mapy.cz/v1/maptiles/basic/256/14/9000/5617?apikey=RaV6FPsdCWdI5nMokGv2cbABAVzPTNP0GnpP1pBrbIQ</msg>
+<var>${src}</var>
+<arg>${tiles[0]}</arg>
+<arg>src</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-07-19T18:59:15.019094" elapsed="0.004577"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-19T18:59:15.023946" level="INFO">První dlaždice src: https://api.mapy.cz/v1/maptiles/basic/256/14/9000/5617?apikey=RaV6FPsdCWdI5nMokGv2cbABAVzPTNP0GnpP1pBrbIQ</msg>
+<arg>První dlaždice src: ${src}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-19T18:59:15.023769" elapsed="0.000210"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${src}</arg>
+<arg>mapy.cz</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-19T18:59:15.024059" elapsed="0.000096"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ZOOM_IN_BUTTON}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T18:59:15.024244" elapsed="0.008795"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:59:15.041435" level="INFO">${before} = z-index: 19; transform: translate3d(0px, 0px, 0px) scale(1);</msg>
+<var>${before}</var>
+<arg>${TILE_CONTAINER}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-07-19T18:59:15.033138" elapsed="0.008317"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:59:15.041640" level="INFO">Clicking element 'css=a.leaflet-control-zoom-in'.</msg>
+<arg>${ZOOM_IN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T18:59:15.041545" elapsed="0.033786"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-19T18:59:17.077294" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-19T18:59:15.075652" elapsed="2.001943"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:59:17.095200" level="INFO">${after} = z-index: 18; transform: translate3d(-593px, -225px, 0px) scale(2);</msg>
+<var>${after}</var>
+<arg>${TILE_CONTAINER}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-07-19T18:59:17.078232" elapsed="0.017022"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-19T18:59:17.095723" level="INFO">Before Zoom: z-index: 19; transform: translate3d(0px, 0px, 0px) scale(1);</msg>
+<arg>Before Zoom: ${before}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-19T18:59:17.095521" elapsed="0.000247"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-19T18:59:17.096005" level="INFO">After Zoom: z-index: 18; transform: translate3d(-593px, -225px, 0px) scale(2);</msg>
+<arg>After Zoom: ${after}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-19T18:59:17.095893" elapsed="0.000148"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<arg>${before}</arg>
+<arg>${after}</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2025-07-19T18:59:17.096147" elapsed="0.000187"/>
+</kw>
+<doc>Ověří, že se mapa zobrazí, načtou se dlaždice a že tlačítko pro přiblížení (zoom +) funguje.</doc>
+<status status="PASS" start="2025-07-19T18:59:14.711385" elapsed="2.385123"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:59:17.246366" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC002-012.png"&gt;&lt;img src="TC002-012.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC002-012.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T18:59:17.097507" elapsed="0.148922"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T18:59:17.246510" elapsed="0.108170"/>
+</kw>
+<status status="PASS" start="2025-07-19T18:59:17.097273" elapsed="0.257515"/>
+</kw>
+<status status="PASS" start="2025-07-19T18:59:07.864584" elapsed="9.490232"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC002-012" id="s1" pass="1" fail="0" skip="0">TC002-012</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

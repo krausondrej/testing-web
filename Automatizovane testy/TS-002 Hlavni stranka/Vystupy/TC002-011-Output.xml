@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T18:56:58.127109" rpa="false" schemaversion="5">
+<suite id="s1" name="TC002-011" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-002 Hlavni stranka/TC002-011.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:56:58.219676" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/'.</msg>
+<arg>${URL_TEST_PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T18:56:58.219574" elapsed="6.247922"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T18:57:04.468914" elapsed="0.443902"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAP_WRAPPER}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T18:57:04.912971" elapsed="0.038111"/>
+</kw>
+<status status="PASS" start="2025-07-19T18:56:58.219281" elapsed="6.731938"/>
+</kw>
+<test id="s1-t1" name="TC002-012: Ověření načtení mapy – viditelnost a dlaždice" line="15">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${MAP_WRAPPER}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T18:57:04.953620" elapsed="0.280462"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAP_WRAPPER}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T18:57:05.234445" elapsed="0.012621"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:57:05.260694" level="INFO">${tiles} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="cdf2d1d3b31c420b370d18c4c5466b7c", element="f.42753119F02648A0D1914428A0719B3F.d.D59DB1A03C452A0295FB2761D353EB70.e.110")&gt;, &lt;selenium.webdri...</msg>
+<var>${tiles}</var>
+<arg>${MAP_TILE}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-07-19T18:57:05.247294" elapsed="0.013456"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-07-19T18:57:05.261202" level="INFO">Length is 24.</msg>
+<msg time="2025-07-19T18:57:05.261255" level="INFO">${count} = 24</msg>
+<var>${count}</var>
+<arg>${tiles}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-07-19T18:57:05.260989" elapsed="0.000281"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-19T18:57:05.261485" level="INFO">Počet načtených dlaždic: 24</msg>
+<arg>Počet načtených dlaždic: ${count}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-19T18:57:05.261380" elapsed="0.000135"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<arg>msg=Mapa nebyla načtena – žádné dlaždice!</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-07-19T18:57:05.261599" elapsed="0.000309"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:57:05.266719" level="INFO">${src} = https://api.mapy.cz/v1/maptiles/basic/256/14/9000/5617?apikey=RaV6FPsdCWdI5nMokGv2cbABAVzPTNP0GnpP1pBrbIQ</msg>
+<var>${src}</var>
+<arg>${tiles[0]}</arg>
+<arg>src</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-07-19T18:57:05.262003" elapsed="0.004739"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-19T18:57:05.267021" level="INFO">První načtená dlaždice: https://api.mapy.cz/v1/maptiles/basic/256/14/9000/5617?apikey=RaV6FPsdCWdI5nMokGv2cbABAVzPTNP0GnpP1pBrbIQ</msg>
+<arg>První načtená dlaždice: ${src}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-19T18:57:05.266840" elapsed="0.000210"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${src}</arg>
+<arg>mapy.cz</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-07-19T18:57:05.267127" elapsed="0.000082"/>
+</kw>
+<doc>Ověří, že mapa (Mapy.cz, Leaflet) se na stránce načte a zobrazí s načtenými dlaždicemi.</doc>
+<status status="PASS" start="2025-07-19T18:57:04.952749" elapsed="0.314569"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:57:05.468563" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC002-011.png"&gt;&lt;img src="TC002-011.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC002-011.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T18:57:05.267855" elapsed="0.200769"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T18:57:05.468712" elapsed="0.100280"/>
+</kw>
+<status status="PASS" start="2025-07-19T18:57:05.267715" elapsed="0.301349"/>
+</kw>
+<status status="PASS" start="2025-07-19T18:56:58.127640" elapsed="7.441447"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC002-011" id="s1" pass="1" fail="0" skip="0">TC002-011</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T18:02:22.138537" rpa="false" schemaversion="5">
+<suite id="s1" name="TC002-005" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-002 Hlavni stranka/TC002-005.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:02:22.242666" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/'.</msg>
+<arg>${URL_MAIN}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T18:02:22.242536" elapsed="6.252203"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T18:02:28.495166" elapsed="0.380092"/>
+</kw>
+<status status="PASS" start="2025-07-19T18:02:22.242241" elapsed="6.633188"/>
+</kw>
+<test id="s1-t1" name="TC002-005: Funkčnost odkazu „Další zprávy na ÚD“" line="14">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${LINK_VICE_UREDNI}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T18:02:28.876623" elapsed="0.290004"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LINK_VICE_UREDNI}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T18:02:29.166991" elapsed="0.015055"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:02:29.182421" level="INFO">Clicking element 'xpath=//a[@class='main-box-more']'.</msg>
+<arg>${LINK_VICE_UREDNI}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T18:02:29.182239" elapsed="0.174542"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>${CILOVA_CAST_URL}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-19T18:02:29.357728" elapsed="0.134499"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:02:29.493844" level="INFO">Current location contains '/obec/uredni-deska'.</msg>
+<arg>${CILOVA_CAST_URL}</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-19T18:02:29.492405" elapsed="0.001481"/>
+</kw>
+<doc>Ověří, že kliknutí na odkaz „Další zprávy na ÚD“ přesměruje na správnou stránku.</doc>
+<status status="PASS" start="2025-07-19T18:02:28.875952" elapsed="0.618041"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:02:29.682060" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC002-005.png"&gt;&lt;img src="TC002-005.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC002-005.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T18:02:29.494488" elapsed="0.187641"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T18:02:29.682228" elapsed="0.102106"/>
+</kw>
+<status status="PASS" start="2025-07-19T18:02:29.494363" elapsed="0.290052"/>
+</kw>
+<status status="PASS" start="2025-07-19T18:02:22.139310" elapsed="7.645128"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC002-005" id="s1" pass="1" fail="0" skip="0">TC002-005</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

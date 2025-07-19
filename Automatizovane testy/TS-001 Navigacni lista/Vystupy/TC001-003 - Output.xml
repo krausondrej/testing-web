@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T17:06:10.933613" rpa="false" schemaversion="5">
+<suite id="s1" name="TC001-003" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-001 navigacni lista/TC001-003.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:06:11.039159" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/'.</msg>
+<arg>${URL_TEST_PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T17:06:11.039046" elapsed="5.870684"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T17:06:16.910072" elapsed="0.391237"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:06:11.038761" elapsed="6.262863"/>
+</kw>
+<test id="s1-t1" name="Klik na „Farnost“ a kontrola URL" line="18">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:06:17.303017" level="INFO">Clicking element 'css=#menu'.</msg>
+<arg>${MENU_BURGER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T17:06:17.302552" elapsed="0.044668"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@class='sidebar']//nav</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T17:06:17.347370" elapsed="0.011540"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LINK_SPOLKY}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T17:06:17.359063" elapsed="0.009069"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:06:17.368397" level="INFO">Clicking element 'xpath=//div[@class='sidebar']//a[normalize-space()='Spolky a instituce']'.</msg>
+<arg>${LINK_SPOLKY}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T17:06:17.368261" elapsed="0.024087"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LINK_FARNOST}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T17:06:17.392561" elapsed="0.007744"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:06:17.400536" level="INFO">Clicking element 'xpath=//div[@class='sidebar']//a[normalize-space()='Farnost']'.</msg>
+<arg>${LINK_FARNOST}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T17:06:17.400428" elapsed="0.123320"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>/spol/farnost</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-19T17:06:17.524257" elapsed="0.239482"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:06:17.766061" level="INFO">Current location is 'https://pozlovice.cz/spol/farnost'.</msg>
+<arg>${URL_EXPECTED}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-07-19T17:06:17.763885" elapsed="0.002222"/>
+</kw>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:06:17.963077" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC001-003.png"&gt;&lt;img src="TC001-003.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC001-003.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T17:06:17.766496" elapsed="0.196681"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T17:06:17.963282" elapsed="0.104041"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:06:17.766341" elapsed="0.301053"/>
+</kw>
+<doc>Ověří, že po kliknutí na „Farnost“ se načte správná stránka</doc>
+<status status="PASS" start="2025-07-19T17:06:17.301797" elapsed="0.765671"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:06:18.067973" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<arg>TC001-003.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T17:06:18.067903" elapsed="0.000094"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T17:06:18.068037" elapsed="0.000040"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:06:18.067796" elapsed="0.000301"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:06:10.934274" elapsed="7.133836"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC001-003" id="s1" pass="1" fail="0" skip="0">TC001-003</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

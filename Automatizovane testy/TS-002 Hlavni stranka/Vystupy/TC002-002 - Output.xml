@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T17:52:10.314888" rpa="false" schemaversion="5">
+<suite id="s1" name="TC002-002" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-002 Hlavni stranka/TC002-002.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:52:10.418246" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/'.</msg>
+<arg>${URL_TEST_PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T17:52:10.418133" elapsed="6.211044"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T17:52:16.629967" elapsed="0.382222"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:52:10.417845" elapsed="6.594473"/>
+</kw>
+<test id="s1-t1" name="TC002-002: Kontrola přítomnosti odkazů ve spodní části headline" line="20">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LINK_OBCAN}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T17:52:17.013255" elapsed="0.019280"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LINK_SPOLKY}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T17:52:17.032688" elapsed="0.010143"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LINK_TURISTA}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T17:52:17.042958" elapsed="0.008153"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LINK_UBYTOVANI}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T17:52:17.051242" elapsed="0.007237"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LINK_REZERVACE}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T17:52:17.058580" elapsed="0.008157"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LINK_FOTOGALERIE}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T17:52:17.066868" elapsed="0.007040"/>
+</kw>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:52:17.326094" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC002-002.png"&gt;&lt;img src="TC002-002.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC002-002.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T17:52:17.074425" elapsed="0.251736"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T17:52:17.326247" elapsed="0.095843"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:52:17.074217" elapsed="0.347971"/>
+</kw>
+<doc>Ověří, že se na hlavní stránce zobrazují všechny odkazy: Občan, Spolky, Turista, Ubytování, Rezervace, Fotogalerie</doc>
+<status status="PASS" start="2025-07-19T17:52:17.012647" elapsed="0.409618"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:52:17.422947" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<arg>TC002-002.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T17:52:17.422761" elapsed="0.000210"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T17:52:17.423013" elapsed="0.000037"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:52:17.422656" elapsed="0.000420"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:52:10.316149" elapsed="7.106943"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC002-002" id="s1" pass="1" fail="0" skip="0">TC002-002</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

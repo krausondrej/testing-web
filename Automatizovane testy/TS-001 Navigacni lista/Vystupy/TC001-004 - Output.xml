@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T17:21:25.929084" rpa="false" schemaversion="5">
+<suite id="s1" name="TC001-004" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-001 navigacni lista/TC001-004.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:21:26.032913" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/'.</msg>
+<arg>${URL_TEST_PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T17:21:26.032808" elapsed="13.462198"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T17:21:39.496100" elapsed="0.377707"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:21:26.032522" elapsed="13.841417"/>
+</kw>
+<test id="s1-t1" name="TC001-007: Kliknutí na logo přesměruje na domovskou stránku" line="16">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGO_LINK}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T17:21:39.875472" elapsed="0.020234"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:21:39.896019" level="INFO">Clicking element 'xpath=//a[contains(@class, 'header-logo')]'.</msg>
+<arg>${LOGO_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T17:21:39.895871" elapsed="0.203931"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${URL_EXPECTED}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-07-19T17:21:40.100836" elapsed="2.909550"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:21:43.012501" level="INFO">Current location is 'https://pozlovice.cz/'.</msg>
+<arg>${URL_EXPECTED}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-07-19T17:21:43.010558" elapsed="0.001984"/>
+</kw>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:21:43.300532" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC001-004.png"&gt;&lt;img src="TC001-004.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC001-004.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T17:21:43.012980" elapsed="0.287617"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T17:21:43.300684" elapsed="0.103221"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:21:43.012810" elapsed="0.391164"/>
+</kw>
+<doc>Ověří, že po kliknutí na logo se uživatel přesměruje na domovskou stránku</doc>
+<status status="PASS" start="2025-07-19T17:21:39.874902" elapsed="3.529132"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:21:43.404540" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<arg>TC001-004.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T17:21:43.404468" elapsed="0.000095"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T17:21:43.404602" elapsed="0.000034"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:21:43.404364" elapsed="0.000292"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:21:25.930194" elapsed="17.474475"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC001-004" id="s1" pass="1" fail="0" skip="0">TC001-004</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

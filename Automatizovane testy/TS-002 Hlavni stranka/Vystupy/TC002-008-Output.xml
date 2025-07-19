@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T18:30:30.725925" rpa="false" schemaversion="5">
+<suite id="s1" name="TC002-008" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-002 Hlavni stranka/TC002-008.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:30:30.820135" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/'.</msg>
+<arg>${URL_TEST_PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T18:30:30.820000" elapsed="6.439398"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T18:30:37.260283" elapsed="0.383501"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SLIDER_SECTION}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T18:30:37.643918" elapsed="0.016126"/>
+</kw>
+<status status="PASS" start="2025-07-19T18:30:30.819700" elapsed="6.840431"/>
+</kw>
+<test id="s1-t1" name="TC002-008: Posun slideru událostí – ověření změny pozice slide" line="16">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${SLIDER_SECTION}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T18:30:37.660586" elapsed="0.276492"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NEXT_ARROW}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T18:30:37.937486" elapsed="0.016722"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:30:37.970750" level="INFO">${before} = width: 1120px; left: 0px; transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);</msg>
+<var>${before}</var>
+<arg>${SLIDE_FIRST}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-07-19T18:30:37.954476" elapsed="0.016315"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:30:37.971113" level="INFO">Clicking element 'css=a.slider-navigation-right-arrow'.</msg>
+<arg>${NEXT_ARROW}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T18:30:37.970952" elapsed="0.034670"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-19T18:30:40.007323" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-19T18:30:38.005783" elapsed="2.002046"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:30:40.025133" level="INFO">${after} = width: 1120px; left: 0px; transition-duration: 800ms; transform: translate(-1120px, 0px) translateZ(0px);</msg>
+<var>${after}</var>
+<arg>${SLIDE_FIRST}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-07-19T18:30:40.008658" elapsed="0.016539"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-19T18:30:40.025794" level="INFO">Before: width: 1120px; left: 0px; transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);</msg>
+<arg>Before: ${before}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-19T18:30:40.025533" elapsed="0.000314"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-19T18:30:40.026161" level="INFO">After: width: 1120px; left: 0px; transition-duration: 800ms; transform: translate(-1120px, 0px) translateZ(0px);</msg>
+<arg>After: ${after}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-19T18:30:40.026016" elapsed="0.000188"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<arg>${before}</arg>
+<arg>${after}</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2025-07-19T18:30:40.026340" elapsed="0.000229"/>
+</kw>
+<doc>Ověří, že se po kliknutí na šipku vpravo změní pozice (transformace) slideru.</doc>
+<status status="PASS" start="2025-07-19T18:30:37.660214" elapsed="2.366568"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:30:40.149642" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC002-008.png"&gt;&lt;img src="TC002-008.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC002-008.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T18:30:40.027941" elapsed="0.121763"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T18:30:40.149784" elapsed="0.097713"/>
+</kw>
+<status status="PASS" start="2025-07-19T18:30:40.027662" elapsed="0.219906"/>
+</kw>
+<status status="PASS" start="2025-07-19T18:30:30.726435" elapsed="9.521154"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC002-008" id="s1" pass="1" fail="0" skip="0">TC002-008</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

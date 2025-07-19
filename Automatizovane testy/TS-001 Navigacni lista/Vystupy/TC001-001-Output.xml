@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T16:52:39.723500" rpa="false" schemaversion="5">
+<suite id="s1" name="TC001-001" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-001 navigacni lista/TC001-001.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:52:39.816370" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/'.</msg>
+<arg>${URL_TEST_PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T16:52:39.816259" elapsed="7.111445"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T16:52:46.928076" elapsed="0.375383"/>
+</kw>
+<status status="PASS" start="2025-07-19T16:52:39.815924" elapsed="7.487703"/>
+</kw>
+<test id="s1-t1" name="Kontrola navigace v burger menu" line="21">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:52:47.304486" level="INFO">Clicking element 'css=#menu'.</msg>
+<arg>css=#menu</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T16:52:47.304135" elapsed="0.052675"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@class='sidebar']//nav</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T16:52:47.356968" elapsed="0.011670"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:52:47.375747" level="INFO">Element 'xpath=//div[@class='sidebar']//nav//a[normalize-space()='Kontakty']' is displayed.</msg>
+<arg>${NAV_KONTAKTY}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T16:52:47.368783" elapsed="0.007007"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:52:47.384117" level="INFO">Element 'xpath=//div[@class='sidebar']//nav//a[normalize-space()='Občan']' is displayed.</msg>
+<arg>${NAV_OBCAN}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T16:52:47.375891" elapsed="0.008269"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:52:47.391582" level="INFO">Element 'xpath=//div[@class='sidebar']//nav//a[normalize-space()='Spolky a instituce']' is displayed.</msg>
+<arg>${NAV_SPOLKY}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T16:52:47.384264" elapsed="0.007354"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:52:47.400593" level="INFO">Element 'xpath=//div[@class='sidebar']//nav//a[normalize-space()='Turista a volný čas']' is displayed.</msg>
+<arg>${NAV_TURISTA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T16:52:47.391703" elapsed="0.008929"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:52:47.408453" level="INFO">Element 'xpath=//div[@class='sidebar']//nav//a[normalize-space()='Ubytování a služby']' is displayed.</msg>
+<arg>${NAV_UBYTOVANI}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T16:52:47.400729" elapsed="0.007764"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:52:47.415566" level="INFO">Element 'xpath=//div[@class='sidebar']//nav//a[normalize-space()='Fotogalerie']' is displayed.</msg>
+<arg>${NAV_FOTOGALERIE}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T16:52:47.408597" elapsed="0.007000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:52:47.422957" level="INFO">Element 'xpath=//div[@class='sidebar']//nav//a[normalize-space()='Videa']' is displayed.</msg>
+<arg>${NAV_VIDEA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T16:52:47.415681" elapsed="0.007313"/>
+</kw>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:52:47.642438" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC001-001.png"&gt;&lt;img src="TC001-001.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC001-001.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T16:52:47.423361" elapsed="0.219157"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T16:52:47.642602" elapsed="0.104340"/>
+</kw>
+<status status="PASS" start="2025-07-19T16:52:47.423223" elapsed="0.323790"/>
+</kw>
+<doc>Ověří hlavní položky navigace ve výsuvném (burger) menu</doc>
+<status status="PASS" start="2025-07-19T16:52:47.303742" elapsed="0.443330"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:52:47.747575" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<arg>TC001-001.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T16:52:47.747506" elapsed="0.000090"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T16:52:47.747635" elapsed="0.000035"/>
+</kw>
+<status status="PASS" start="2025-07-19T16:52:47.747397" elapsed="0.000293"/>
+</kw>
+<status status="PASS" start="2025-07-19T16:52:39.724129" elapsed="8.023574"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC001-001" id="s1" pass="1" fail="0" skip="0">TC001-001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T18:00:42.181074" rpa="false" schemaversion="5">
+<suite id="s1" name="TC002-004" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-002 Hlavni stranka/TC002-004.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:00:42.283134" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/'.</msg>
+<arg>${URL_MAIN}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T18:00:42.283029" elapsed="5.834602"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T18:00:48.118044" elapsed="0.372054"/>
+</kw>
+<status status="PASS" start="2025-07-19T18:00:42.282753" elapsed="6.207468"/>
+</kw>
+<test id="s1-t1" name="TC002-004: Přítomnost minimálně 1 dokumentu na úřední desce" line="13">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${UREDNI_DOKUMENTY}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-19T18:00:48.491007" elapsed="0.291169"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${UREDNI_DOKUMENTY}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T18:00:48.782774" elapsed="0.016337"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:00:48.803958" level="INFO">${count} = 3</msg>
+<var>${count}</var>
+<arg>${UREDNI_DOKUMENTY}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-07-19T18:00:48.799302" elapsed="0.004689"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<arg>msg=Očekává se alespoň 1 dokument, ale nalezeno ${count}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-07-19T18:00:48.804120" elapsed="0.000386"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-19T18:00:48.804725" level="INFO">Nalezeno 3 dokument(ů) na úřední desce</msg>
+<arg>Nalezeno ${count} dokument(ů) na úřední desce</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-19T18:00:48.804617" elapsed="0.000136"/>
+</kw>
+<doc>Ověří, že se v sekci „Úřední deska“ na hlavní stránce zobrazí alespoň jeden dokument.</doc>
+<status status="PASS" start="2025-07-19T18:00:48.490431" elapsed="0.314423"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T18:00:49.000475" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC002-004.png"&gt;&lt;img src="TC002-004.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC002-004.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T18:00:48.805486" elapsed="0.195051"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T18:00:49.000621" elapsed="0.095131"/>
+</kw>
+<status status="PASS" start="2025-07-19T18:00:48.805340" elapsed="0.290484"/>
+</kw>
+<status status="PASS" start="2025-07-19T18:00:42.181948" elapsed="6.913900"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC002-004" id="s1" pass="1" fail="0" skip="0">TC002-004</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

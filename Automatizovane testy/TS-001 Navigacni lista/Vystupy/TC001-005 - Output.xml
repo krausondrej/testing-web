@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T17:23:18.086888" rpa="false" schemaversion="5">
+<suite id="s1" name="TC001-005" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-001 navigacni lista/TC001-005.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:23:18.189222" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/'.</msg>
+<arg>${URL_TEST_PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T17:23:18.189111" elapsed="8.670862"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T17:23:26.860705" elapsed="0.564534"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:23:18.188789" elapsed="9.236607"/>
+</kw>
+<test id="s1-t1" name="TC001-005: Ověření funkčnosti vyhledávacího pole" line="16">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T17:23:27.426155" elapsed="0.061378"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:23:27.488080" level="INFO">Typing text 'kabelovka' into text field 'xpath=//form[contains(@class,'header-search')]//input[@name='q']'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>${SEARCH_TEXT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T17:23:27.487885" elapsed="0.121295"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:23:27.609700" level="INFO">Sending key(s) ('RETURN',) to xpath=//form[contains(@class,'header-search')]//input[@name='q'] element.</msg>
+<msg time="2025-07-19T17:23:27.888335" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-07-19T17:23:27.888401" level="INFO">Releasing special key RETURN.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-07-19T17:23:27.609352" elapsed="0.284982"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>${SEARCH_RESULT_URL}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-19T17:23:27.894475" elapsed="0.308625"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:23:28.205581" level="INFO">Current location contains '/hledat?q=kabelovka'.</msg>
+<arg>${SEARCH_RESULT_URL}</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-19T17:23:28.203250" elapsed="0.002379"/>
+</kw>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:23:28.405890" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC001-005.png"&gt;&lt;img src="TC001-005.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC001-005.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T17:23:28.206053" elapsed="0.199905"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T17:23:28.406050" elapsed="0.096125"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:23:28.205885" elapsed="0.296358"/>
+</kw>
+<doc>Ověří, že po zadání výrazu do pole pro hledání a potvrzení dojde k přesměrování na stránku s výsledky</doc>
+<status status="PASS" start="2025-07-19T17:23:27.425519" elapsed="1.076782"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:23:28.502816" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<arg>TC001-005.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T17:23:28.502740" elapsed="0.000099"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T17:23:28.502882" elapsed="0.000039"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:23:28.502630" elapsed="0.000313"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:23:18.087900" elapsed="10.415056"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC001-005" id="s1" pass="1" fail="0" skip="0">TC001-005</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

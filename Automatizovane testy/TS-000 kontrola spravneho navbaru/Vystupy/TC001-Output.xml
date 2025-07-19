@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T16:28:46.798177" rpa="false" schemaversion="5">
+<suite id="s1" name="TC001" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-000 kontrola spravneho navbaru/TC001.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:28:46.916118" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/'.</msg>
+<arg>${URL_TEST_PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T16:28:46.916007" elapsed="12.901559"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T16:28:59.818685" elapsed="0.374163"/>
+</kw>
+<status status="PASS" start="2025-07-19T16:28:46.915722" elapsed="13.277371"/>
+</kw>
+<test id="s1-t1" name="Kontrola načtení hlavičky a nadpisu" line="13">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css:header.header h1.sr-only</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-19T16:29:00.195931" elapsed="0.015503"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:29:00.211716" level="INFO">Verifying element 'css:header.header h1.sr-only' contains exact text 'Pozlovice'.</msg>
+<arg>css:header.header h1.sr-only</arg>
+<arg>Pozlovice</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-07-19T16:29:00.211585" elapsed="0.013239"/>
+</kw>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:29:00.480036" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC001_Header.png"&gt;&lt;img src="TC001_Header.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC001_Header.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T16:29:00.225272" elapsed="0.254834"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T16:29:00.480209" elapsed="0.128275"/>
+</kw>
+<status status="PASS" start="2025-07-19T16:29:00.225099" elapsed="0.383475"/>
+</kw>
+<doc>Ověří, že hlavička stránky obsahuje správný nadpis "Pozlovice"</doc>
+<status status="PASS" start="2025-07-19T16:29:00.195406" elapsed="0.413229"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:29:00.609183" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<arg>TC001_Header.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T16:29:00.609098" elapsed="0.000110"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T16:29:00.609250" elapsed="0.000039"/>
+</kw>
+<status status="PASS" start="2025-07-19T16:29:00.608980" elapsed="0.000331"/>
+</kw>
+<status status="PASS" start="2025-07-19T16:28:46.799668" elapsed="13.809656"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC001" id="s1" pass="1" fail="0" skip="0">TC001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

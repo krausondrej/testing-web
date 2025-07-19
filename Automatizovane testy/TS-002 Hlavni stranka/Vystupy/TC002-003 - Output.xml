@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T17:53:47.144414" rpa="false" schemaversion="5">
+<suite id="s1" name="TC002-003" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-002 Hlavni stranka/TC002-003.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:53:47.247822" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T17:53:47.247716" elapsed="7.024273"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T17:53:54.273023" elapsed="0.376338"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:53:47.247440" elapsed="7.402052"/>
+</kw>
+<test id="s1-t1" name="TC002-003: Přesměrování na „Ubytování a služby“" line="14">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LINK_UBYTOVANI}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T17:53:54.650557" elapsed="0.027550"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:53:54.678421" level="INFO">Clicking element 'xpath=//div[@class="headline-bottom-items"]//a[normalize-space()="Ubytování a služby"]'.</msg>
+<arg>${LINK_UBYTOVANI}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T17:53:54.678277" elapsed="0.144265"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>/obec/ubytovani-a-sluzby</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-19T17:53:54.822860" elapsed="0.141342"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:53:54.966976" level="INFO">Current location is 'https://pozlovice.cz/obec/ubytovani-a-sluzby'.</msg>
+<arg>${EXPECTED_URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-07-19T17:53:54.964355" elapsed="0.002766"/>
+</kw>
+<doc>Ověří, že po kliknutí na „Ubytování a služby“ dojde k přesměrování na správnou URL.</doc>
+<status status="PASS" start="2025-07-19T17:53:54.649947" elapsed="0.317312"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T17:53:55.156098" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC002-003.png"&gt;&lt;img src="TC002-003.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC002-003.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T17:53:54.967788" elapsed="0.188374"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T17:53:55.156247" elapsed="0.097225"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:53:54.967641" elapsed="0.285953"/>
+</kw>
+<status status="PASS" start="2025-07-19T17:53:47.145678" elapsed="8.107949"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC002-003" id="s1" pass="1" fail="0" skip="0">TC002-003</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

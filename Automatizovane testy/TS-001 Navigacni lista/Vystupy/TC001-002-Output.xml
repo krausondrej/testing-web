@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on darwin)" generated="2025-07-19T16:59:48.301360" rpa="false" schemaversion="5">
+<suite id="s1" name="TC001-002" source="/Users/ondrejkraus/testing/testing-web/Automatizovane testy/TS-001 navigacni lista/TC001-002.robot">
+<kw name="Pre-conditions" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:59:48.395002" level="INFO">Opening browser 'Chrome' to base url 'https://pozlovice.cz/'.</msg>
+<arg>${URL_TEST_PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-19T16:59:48.394894" elapsed="5.948587"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-19T16:59:54.343789" elapsed="0.374267"/>
+</kw>
+<status status="PASS" start="2025-07-19T16:59:48.394611" elapsed="6.323550"/>
+</kw>
+<test id="s1-t1" name="Klik na Občan a ověření zobrazení „Informujeme“" line="17">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:59:54.719105" level="INFO">Clicking element 'css=#menu'.</msg>
+<arg>${MENU_BURGER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T16:59:54.718806" elapsed="0.053653"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@class='sidebar']//nav</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T16:59:54.772611" elapsed="0.011808"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LINK_OBCAN}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T16:59:54.784548" elapsed="0.007551"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:59:54.792321" level="INFO">Clicking element 'xpath=//div[@class='sidebar']//a[normalize-space()='Občan']'.</msg>
+<arg>${LINK_OBCAN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-19T16:59:54.792199" elapsed="0.024466"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LINK_INFORMUJEME}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T16:59:54.816796" elapsed="0.008174"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:59:54.830557" level="INFO">Element 'xpath=//div[@class='sidebar']//a[h4[normalize-space()='Informujeme']]' is displayed.</msg>
+<arg>${LINK_INFORMUJEME}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-19T16:59:54.825100" elapsed="0.005495"/>
+</kw>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:59:55.032164" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC001-002.png"&gt;&lt;img src="TC001-002.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC001-002.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T16:59:54.831044" elapsed="0.201186"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T16:59:55.032331" elapsed="0.092340"/>
+</kw>
+<status status="PASS" start="2025-07-19T16:59:54.830893" elapsed="0.293844"/>
+</kw>
+<doc>Klikne na "Občan" v burger menu a ověří, že se objeví submenu "Informujeme"</doc>
+<status status="PASS" start="2025-07-19T16:59:54.718254" elapsed="0.406540"/>
+</test>
+<kw name="Post-conditions" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-19T16:59:55.125363" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<arg>TC001-002.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-19T16:59:55.125202" elapsed="0.000188"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-19T16:59:55.125434" elapsed="0.000038"/>
+</kw>
+<status status="PASS" start="2025-07-19T16:59:55.125103" elapsed="0.000390"/>
+</kw>
+<status status="PASS" start="2025-07-19T16:59:48.301861" elapsed="6.823645"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC001-002" id="s1" pass="1" fail="0" skip="0">TC001-002</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
